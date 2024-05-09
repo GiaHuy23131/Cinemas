@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.cinemas.Add_Cinema">
+    <TextView
+        style="@style/toolBar"
+        android:text="@string/add"
+        android:textSize="30dp" />
+    <LinearLayout
+        android:layout_weight="1"
+        style="@style/lineLayout">
+        <TextView
+            android:text="@string/type"
+            style="@style/title"/>
+        <Spinner
+            android:id="@+id/spType"
+            style="@style/editText" />
+        <TextView
+            android:text="@string/movieName"
+            style="@style/title"/>
+        <EditText
+            android:id="@+id/edtMovieName"
+            android:hint="Nhập tên phim"
+            style="@style/editText"/>
+        <TextView
+            android:text="@string/time"
+            style="@style/title"/>
+        <EditText
+            android:id="@+id/edtTime"
+            android:hint="Nhập thời lượng"
+            style="@style/editText"/>
+        <TextView
+            android:text="@string/description"
+            style="@style/title"/>
+        <EditText
+            android:id="@+id/edtDescription"
+            android:hint="Nhập mô tả"
+            style="@style/editText"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnAddCinemas"
+        android:text="@string/add"
+        style="@style/button"/>
+</LinearLayout>

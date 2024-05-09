@@ -7,15 +7,10 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.cinemas.ui.cinemas.CinemasFragment"
+        android:name="com.example.cinemas.ui.cinemas.CinemaFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_cinemas" />
+        tools:layout="@layout/fragment_cinema" />
 
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.cinemas.ui.account.AccountFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"

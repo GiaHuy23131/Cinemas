@@ -2,6 +2,8 @@ package com.example.cinemas;
 
 import android.os.Bundle;
 
+import com.example.cinemas.ui.movie.Movie;
+import com.example.cinemas.ui.movie.MovieAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,29 +11,38 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cinemas.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
-
-    private ActivityMainBinding binding;
-
+    RecyclerView revListMovie;
+    MovieAdapter movieAdapter;
+    ArrayList<Movie> arrMovie = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        setContentView(R.layout.activity_main);
+        setControl();
+        setEvent();
     }
+    private void setControl() {
+        revListMovie = findViewById(R.id.revListMovie);
+    }
+    private void setEvent() {
+        //khoi tao
+        khoitao();
+        revListMovie.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        movieAdapter = new MovieAdapter(this,arrMovie);
+        revListMovie.setAdapter(movieAdapter);
+    }
+
+    private void khoitao() {
+        arrMovie.add(new Movie(1,"2",R.drawable.ic_launcher_background));
+    }
+
 
 }
